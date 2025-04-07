@@ -683,7 +683,7 @@ cmd.commands = {
         cmd.fix,
         _private = true,
     },
-    top_iterview = {
+    top_interview = {
         cmd.top_interview_150,
       },
 }

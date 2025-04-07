@@ -45,8 +45,8 @@ page:insert(Buttons({
     list,
     random,
     daily,
-    back,
     top_interview,
+    back,
 }))
 
 page:insert(footer)
