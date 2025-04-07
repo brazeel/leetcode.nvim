@@ -178,5 +178,17 @@ queries.session_progress = [[
             }
         }
     ]]
+    
+    queries.study_plan_detail = [[
+        query studyPlanDetail($slug: String!) {
+          studyPlanV2Detail(planSlug: $slug) {
+            planSubGroups {
+              questions {
+                title_slug: titleSlug
+              }
+            }
+          }
+        }
+    ]]
 
 return queries

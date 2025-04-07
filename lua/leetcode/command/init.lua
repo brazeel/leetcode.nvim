@@ -612,6 +612,21 @@ function cmd.setup()
     })
 end
 
+function cmd.top_interview_150()
+    require("leetcode.utils").auth_guard()
+
+    local problems = require("leetcode.api.problems")
+
+    problems.top_interview_150(function(slugs, err)
+        if err then
+            return log.err(err)
+        end
+        local p = require("leetcode.cache.problemlist").get_by_title_slugs(slugs)
+        local picker = require("leetcode.picker")
+        picker.question(p)
+    end)
+end
+
 cmd.commands = {
     cmd.menu,
 
@@ -668,6 +683,9 @@ cmd.commands = {
         cmd.fix,
         _private = true,
     },
+    top_iterview = {
+        cmd.top_interview_150,
+      },
 }
 
 return cmd

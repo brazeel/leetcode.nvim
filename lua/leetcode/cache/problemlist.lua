@@ -142,4 +142,12 @@ function Problemlist.delete()
     return pcall(path.rm, file)
 end
 
+---@return lc.cache.Question
+function Problemlist.get_by_title_slugs(title_slugs)
+    local problems = Problemlist.get()
+    return vim.tbl_filter(function(e)
+        return vim.tbl_contains(title_slugs, e.title_slug)
+    end, problems)
+end
+
 return Problemlist

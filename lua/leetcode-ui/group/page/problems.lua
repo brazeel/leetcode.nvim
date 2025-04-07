@@ -33,6 +33,12 @@ local daily = Button("Daily", {
     on_press = cmd.qot,
 })
 
+local top_interview = Button("Top Interview", {
+    icon = "🔝",
+    sc = "t",
+    on_press = cmd.top_interview_150,
+})
+
 local back = BackButton("menu")
 
 page:insert(Buttons({
@@ -40,6 +46,7 @@ page:insert(Buttons({
     random,
     daily,
     back,
+    top_interview,
 }))
 
 page:insert(footer)

@@ -34,6 +34,21 @@ function question.by_title_slug(title_slug)
     return q
 end
 
+function question.get_top150() 
+    local variables = {
+        slug = "top-interview-150"
+    }
+    local query = queries.top150
+
+    local res, err = utils.query(query, variables)
+    if not res or err then
+        return log.err(err)
+    end
+
+    local q = res.data.studyPlanV2Detail.planSubGroups
+
+end
+
 ---@param filters? table
 function question.random(filters)
     local variables = {
